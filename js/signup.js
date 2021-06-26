@@ -81,7 +81,7 @@ $(function() {
     if (error_email === false && error_password === false && error_retype_password === false) {
       alert("Registration Successfull");
       localStorage.setItem("loggedIn", true);
-      window.location.href = "../pages/user.html";  //XQ NO ME DEVUELVE A LA MAIN PAGE?????
+      window.location.href = "../pages/index.html";  //XQ NO ME DEVUELVE A LA MAIN PAGE?????
       //return true;
 
     } else {
