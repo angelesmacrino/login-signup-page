@@ -82,13 +82,10 @@ $(function() {
       alert("Registration Successfull");
       localStorage.setItem("loggedIn", true);
       window.location.href = "../index.html";  //XQ NO ME DEVUELVE A LA MAIN PAGE?????
-      //return true;
-
     } else {
       alert("Please Fill the form Correctly");
-      return false;
     }
-
+  return false;
  });
   
   
