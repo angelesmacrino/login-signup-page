@@ -45,11 +45,12 @@ h1 {
     background-color: rgb(16, 21, 26);
 }
 
+
+/*TESTIMONIALS GRID*/
+
 .testimonials {
     margin-top:200px
 }
-
-/*TESTIMONIALS GRID*/
 
 .grid {
     display:grid;
@@ -61,6 +62,8 @@ h1 {
     background-color: transparent;
     border: none!important;
 }
+
+/*SIGNUP FORM*/
 
 .form {
     margin-top:100px;
@@ -87,7 +90,7 @@ form input {
 
 form input[type="submit"] {
     margin-top: 40px;
-    background-color: antiquewhite;
+    background-color: aliceblue;
     border:none;
     border-radius: 25px;
 }
@@ -103,6 +106,24 @@ form input[type="checkbox"] {
 
 .card-text {
     height:60px;
+}
+
+/*USERPAGE*/
+
+.userPage {
+    margin-top:100px;
+    padding:50px;
+    margin-left:10px;
+    margin-right: 10px;
+    background-color: rgb(30, 30, 30);
+    border-radius: 25px;
+}
+
+.userPage button {
+    background-color: aliceblue;
+    padding: 10px;
+    border:none;
+    border-radius: 25px;
 }
 
 /*IMAGES*/
@@ -173,6 +194,12 @@ form input {
 }
 
 form input[type="submit"] {
+    font-size: 2rem;
+    color:  rgb(30, 30, 30);
+    max-width: 188px;
+}
+
+.userPage button {
     font-size: 2rem;
     color:  rgb(30, 30, 30);
     max-width: 188px;
