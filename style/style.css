@@ -38,7 +38,7 @@ h1 {
 
 
 
-.signupButton {
+.signupButton, .userButton {
     border:none;
     border-radius:35px;
     margin-top:20px;
@@ -80,7 +80,7 @@ form > * {
     
 }
 
-form label {
+form label[for="password"], label[for="retypePassword"] {
     margin-top:15px;
 }
 
@@ -160,12 +160,12 @@ h2 {
     padding-left:30px
 }
 
-.pageDescription {
+.pageDescription, .logged p {
     color:rgb(241, 247, 253);
     font-size: 2rem;
 }
 
-.signupButton a{
+.signupButton a, .userButton a{
     font-size: 3rem;
     font-weight: bold;
     color:rgb(241, 247, 253);
