@@ -1,7 +1,5 @@
 $(function() {
 
-
-
   $("#emailErrorMessage").hide();
   $("#passwordErrorMessage").hide();
   $("#repeatPasswordErrorMessage").hide();
@@ -10,7 +8,7 @@ $(function() {
   });
 
   var emailError = false;
-  var passwordError = false; //ES NECESARIO ESTO?????
+  var passwordError = false; 
   var repeatPasswordError = false;
 
   $("#email").focusout(function() {
@@ -33,12 +31,12 @@ $(function() {
     if (pattern.test(email) && email !== '') {
        $("#emailErrorMessage").hide();
        $("#email").css("border","none");
-       error_email = false;
+       emailError = false;
     } else {
        $("#emailErrorMessage").html("Invalid Email");
        $("#emailErrorMessage").show();
        $("#email").css("border","2px solid darkred");
-       error_email = true;
+       emailError = true;
     }
   }
 
@@ -47,12 +45,12 @@ $(function() {
       $("#passwordErrorMessage").html("The password has to be at least 5 characters long");
       $("#passwordErrorMessage").show();
       $("#password").css("border","2px solid darkred");
-      error_password = true;
+      passwordError = true;
     }
     else {
       $("#passwordErrorMessage").hide();
       $("#password").css("border","none");
-      error_password = false;
+      passwordError = false;
    }
   }
 
@@ -61,32 +59,36 @@ $(function() {
       $("#repeatPasswordErrorMessage").html("Passwords do not match");
       $("#repeatPasswordErrorMessage").show();
       $("#retypePassword").css("border","2px solid darkred");
-      error_retype_password = true;
+      repeatPasswordError = true;
     } else {
       $("#passwordErrorMessage").hide();
       $("#retypePassword").css("border","none");
-      error_retype_password = false;
+      repeatPasswordError = false;
     }
   }
 
-  $("form").submit(function() {
-    error_email = false;
-    error_password = false;
-    error_retype_password = false;   //ES NECESARIO ESTO?
+  $("form").submit(function(e) {
+    emailError = false;
+    passwordError = false;
+    repeatPasswordError = false;   //ES NECESARIO ESTO?
 
     checkEmail();
     checkPassword();
     checkRetypePassword();
 
-    if (error_email === false && error_password === false && error_retype_password === false) {
+    if (emailError === false && passwordError === false && repeatPasswordError === false) {
       alert("Registration Successfull");
       localStorage.setItem("loggedIn", true);
-      window.location.href = "../index.html";  //XQ NO ME DEVUELVE A LA MAIN PAGE?????
+      window.location.href = "../pages/user.html";
+      e.preventDefault();
+      window.location.assign("../index.html"); 
+      return true;
+
     } else {
       alert("Please Fill the form Correctly");
+      return false;
     }
-  return false;
+
  });
-  
   
 })
